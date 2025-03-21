@@ -679,7 +679,7 @@ def aero_descent():
             # close catch 80
             # test 70
             # test 65
-        elif booster.flight().surface_altitude < 8920 and (booster.flight().mach * booster.flight().speed_of_sound) > 60:
+        elif booster.flight().surface_altitude < 9420 and (booster.flight().mach * booster.flight().speed_of_sound) > 60:
             #9850 close catch
             #9825 close catch -> better?
             #9810 test NO
