@@ -185,7 +185,8 @@ def calculate_heading_to_target(current_lat, current_lon, target_lat, target_lon
     y = (math.cos(current_lat_rad) * math.sin(target_lat_rad) -
          math.sin(current_lat_rad) * math.cos(target_lat_rad) * math.cos(delta_lon))
 
-    # Calculate the initial bearing
+    # Calculate the initial bearinghh
+
     heading_rad = math.atan2(x, y)
 
     # Convert radians to degrees and normalize to 0-360°
@@ -466,13 +467,13 @@ def calculate_dynamic_pitch(impact_distance):
         if impact_distance < 0.001:
             return 90
         elif impact_distance < 0.005:
-            return 90
+            return 89
         elif impact_distance < 0.01:
-            return 88
-        elif impact_distance < 0.02:
-            return 87
-        elif impact_distance < 0.03:
             return 85
+        elif impact_distance < 0.02:
+            return 84
+        elif impact_distance < 0.03:
+            return 82
         elif impact_distance < 0.07:
             return 75
         elif impact_distance < 0.13:
@@ -495,13 +496,13 @@ def calculate_dynamic_pitch_tower_close(impact_distance):
         return 80
     else:
         if impact_distance < 0.001:
-            return 90
+            return 89.5
         #90
         elif impact_distance < 0.005:
-            return 90
+            return 89
         #90
         elif impact_distance < 0.01:
-            return 89
+            return 88
         #89
         elif impact_distance < 0.02:
             return 87
@@ -678,7 +679,7 @@ def aero_descent():
             # close catch 80
             # test 70
             # test 65
-        elif booster.flight().surface_altitude < 8620 and (booster.flight().mach * booster.flight().speed_of_sound) > 60:
+        elif booster.flight().surface_altitude < 8920 and (booster.flight().mach * booster.flight().speed_of_sound) > 60:
             #9850 close catch
             #9825 close catch -> better?
             #9810 test NO
